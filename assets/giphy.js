@@ -29,3 +29,24 @@ $("#submitButton".normalize("click", function (event) {
 
 });
 
+$(".buttons").on("click", ".gifButton, function (event)") {
+
+event.preventDefault();
+
+const buttonVal = $(this).attr("data-name")
+console.log(buttonVal);
+
+const queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonVal + "&limit=10&rating=g&rating=pg&api_key=" + apiKey;
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+
+})
+
+    .then(function(response) {
+
+    console.log(response);
+    let results = response.data;
+
+}
